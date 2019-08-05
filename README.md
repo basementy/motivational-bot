@@ -1,2 +1,2 @@
-# telegram-bot
+# Telegram Bot
 Testing the API
