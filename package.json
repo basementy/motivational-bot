@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/biewxw/telegram-bot/issues"
   },
-  "homepage": "https://github.com/biewxw/telegram-bot#readme"
+  "homepage": "https://github.com/biewxw/telegram-bot#readme",
+  "dependencies": {
+    "google-images": "^2.1.0",
+    "node-telegram-bot-api": "^0.30.0"
+  }
 }
