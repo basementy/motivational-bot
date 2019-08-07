@@ -18,7 +18,10 @@
   },
   "homepage": "https://github.com/biewxw/telegram-bot#readme",
   "dependencies": {
+    "dotenv": "^8.0.0",
+    "fs": "0.0.1-security",
     "google-images": "^2.1.0",
-    "node-telegram-bot-api": "^0.30.0"
+    "node-telegram-bot-api": "^0.30.0",
+    "telegraf": "^3.32.0"
   }
 }
