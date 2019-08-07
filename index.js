@@ -1,11 +1,20 @@
-const TelegramBot = require('node-telegram-bot-api')
-const TOKEN = '719597354:AAGcQSFm3IVQJeTXDeYATU-RqiYDEudUtCA'
-const bot = new TelegramBot( TOKEN, { polling: true })
+// Setup
+require('dotenv').config()
 
-bot.onText(/\/bomdia/, (msg) => {
-  console.log('Working!')
-  const rand = Math.floor((Math.random() * 10) + 1)
-  const chatId = msg.chat.id;
+const Telegraf = require('telegraf')
+const Extra = require('telegraf/extra')
+const fs = require('fs')
+const bot = new Telegraf(process.env.BOT_TOKEN)
 
-  bot.sendPhoto(chatId, `./public/imgs/${rand}.png`)
-});
+// Functions
+console.log("--> Bot Running! <--")
+
+bot.start((ctx) => ctx.reply(`Olá, ${ctx.message.from.first_name}!`))
+bot.command('bomdia', (ctx) => {
+  const rand = Math.floor((Math.random() * 7) + 1)
+  ctx.replyWithPhoto( 
+    {source: fs.createReadStream(`./public/bomdia/${rand}.png`)} 
+  )
+})
+
+bot.launch()
