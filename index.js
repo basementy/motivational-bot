@@ -2,8 +2,8 @@
 require('dotenv').config()
 
 const Telegraf = require('telegraf')
-const Extra = require('telegraf/extra')
 const fs = require('fs')
+
 const bot = new Telegraf(process.env.BOT_TOKEN)
 
 // Functions
@@ -18,10 +18,10 @@ bot.command('bomdia', (ctx) => {
   )
 })
 
-// Teste
-bot.command('j', (ctx) => {
-  ctx.replyWithPhoto(
-    {source: fs.createReadStream('./public/outros/1.jpg')}
+bot.command('boanoite', (ctx) => {
+  const rand = Math.floor((Math.random() * 10) + 1)
+  ctx.replyWithPhoto( 
+    {source: fs.createReadStream(`./public/boanoite/${rand}.jpg`)} 
   )
 })
 
