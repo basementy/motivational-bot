@@ -6,6 +6,7 @@ Usage:
 ## Start
 
 1 - You need to get your bot token with botfather and insert in the .env file
+
 2 - Just start your bot server with:
 
 ````
